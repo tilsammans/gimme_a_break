@@ -1,0 +1,51 @@
+= Gimme A Break
+
+This plugin adds a way to throttle ActiveRecord creation.
+
+Add +gimme_a_break+ to your model to enable the throttling.
+It will then not be possible to create models in quick succession.
+Object creation is usually very "expensive" (in time) and blocks most
+database servers. Database IO is usually the bottleneck
+in web applications, and thottling this back is a great way to
+increase overall availability.
+
+An error message will be added to the base object and the object
+will not be valid. It's up to you to display this error to the user.
+When you follow ActiveRecord convention you will be fine. The error
+message can be localized using the key +gimme_a_break.notice+ with
+{{count}} as the timeout in seconds.
+
+The throttle is applied per running instance. If you have two Passenger
+instances running, people will be able to create twice the amount
+of objects. This is exactly what you want, since the limit should scale
+linearly with the capacity of your servers. If your database keeps
+getting overloaded, reduce the timeout.
+
+
+== Options
+
++timeout+: the time to wait between creates, in seconds. Default is 6.
+
+
+== Prerequisites
+
+Your model needs to have a created_at column for this to work.
+
+
+== Installation
+
+ruby script/plugin install git://github.com/tilsammans/gimme_a_break
+
+
+== Examples
+
+  class Comment < ActiveRecord::Base
+    gimme_a_break
+  end
+
+  class Tweet < ActiveRecord::Base
+    gimme_a_break :timeout => 2
+  end
+
+
+Copyright (c) 2010 Joost Baaij, released under the MIT license
