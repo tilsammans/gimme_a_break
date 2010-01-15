@@ -1,1 +1,1 @@
-ActiveRecord::Base.class_eval { include CanHazBreakz }
+ActiveRecord::Base.class_eval { include GimmeABreak }

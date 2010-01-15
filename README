@@ -6,7 +6,7 @@ This plugin adds a way to throttle ActiveRecord creation.
 Add +can_haz_breakz+ to your model to enable the throttling.
 It will then not be possible to create models in quick succession.
 
-A error message will be added to the base object and the object
+An error message will be added to the base object and the object
 will not be valid. The error message can be localized using the
 key +can_haz_breakz.break+ with {{count}} as the timeout in seconds.
 
@@ -14,7 +14,13 @@ key +can_haz_breakz.break+ with {{count}} as the timeout in seconds.
 Options
 =======
 
-+timeout+: the time to wait between creates, in seconds.
++timeout+: the time to wait between creates, in seconds. Default is 6.
+
+
+Prerequisites
+=============
+
+Your model needs to have a created_at column for this to work.
 
 
 Installation
