@@ -12,8 +12,8 @@ increase overall availability.
 An error message will be added to the base object and the object
 will not be valid. It's up to you to display this error to the user.
 When you follow ActiveRecord convention you will be fine. The error
-message can be localized using the key +gimme_a_break.notice+ with
-{{count}} as the timeout in seconds.
+message can be localized using the key <tt>gimme_a_break.notice</tt> with
+<tt>{{count}}</tt> as the timeout in seconds.
 
 The throttle is applied per running instance. If you have two Passenger
 instances running, people will be able to create twice the amount
@@ -34,7 +34,7 @@ Your model needs to have a created_at column for this to work.
 
 == Installation
 
-ruby script/plugin install git://github.com/tilsammans/gimme_a_break
+  ruby script/plugin install git://github.com/tilsammans/gimme_a_break
 
 
 == Examples
