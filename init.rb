@@ -1,1 +1,1 @@
-ActiveRecord::Base.class_eval { include GimmeABreak }
+# empty since lib/gimme_a_break.rb exists and that will be required automatically.
