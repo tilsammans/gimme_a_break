@@ -1,1 +1,1 @@
-# empty since lib/gimme_a_break.rb exists and that will be required automatically.
+require 'gimme_a_break'
