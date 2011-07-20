@@ -29,12 +29,16 @@ getting overloaded, reduce the timeout.
 
 == Prerequisites
 
-Your model needs to have a created_at column for this to work.
+Your model needs to have a created_at column for this to work. An index on it is highly recommended.
 
 
 == Installation
 
   ruby script/plugin install git://github.com/tilsammans/gimme_a_break
+
+or in your Gemfile:
+
+  gem 'gimme_a_break'
 
 
 == Examples
@@ -48,4 +52,4 @@ Your model needs to have a created_at column for this to work.
   end
 
 
-Copyright (c) 2010 Joost Baaij, released under the MIT license
+Copyright (c) 2011 Joost Baaij, released under the MIT license
