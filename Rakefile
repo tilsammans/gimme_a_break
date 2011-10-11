@@ -3,7 +3,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('gimme_a_break', '0.1.1') do |p|
+Echoe.new('gimme_a_break', '0.2.0') do |p|
   p.summary                  = "Throttle ActiveRecord creation"
   p.url                      = "http://github.com/tilsammans/gimme_a_break"
   p.author                   = "Joost Baaij"

@@ -21,10 +21,13 @@ class ActiveRecord::Base
   def self.gimme_a_break(options ={})
     cattr_accessor :gimme_a_break_timeout
     self.gimme_a_break_timeout = (options[:timeout] || 6)
-    include GimmeABreak
     
-    class_eval <<-EOV
-      validate :gimme_a_break
-    EOV
+    if Rails.env.production?
+      include GimmeABreak
+    
+      class_eval <<-EOV
+        validate :gimme_a_break
+      EOV
+    end
   end
 end  

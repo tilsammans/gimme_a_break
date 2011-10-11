@@ -1,3 +1,5 @@
+v0.2.0. only act in the Rails production environment
+
 v0.1.1. improved documentation and runtime dependency on activerecord
 
 v0.1.0. initial release
