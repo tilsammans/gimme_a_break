@@ -7,7 +7,7 @@ module GimmeABreak
   protected
     def gimme_a_break
       if last_created && last_created.created_at > self.class.gimme_a_break_timeout.seconds.ago
-        errors.add_to_base I18n.t("gimme_a_break.notice", :default => "Temporarily disabled due to a safety measure. Please try again in %{count} seconds", :count => self.class.gimme_a_break_timeout)
+        errors.add :base, I18n.t("gimme_a_break.notice", :default => "Temporarily disabled due to a safety measure. Please try again in %{count} seconds", :count => self.class.gimme_a_break_timeout)
       end
     end
     

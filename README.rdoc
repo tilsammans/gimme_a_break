@@ -34,11 +34,13 @@ Your model needs to have a created_at column for this to work. An index on it is
 
 == Installation
 
-  ruby script/plugin install git://github.com/tilsammans/gimme_a_break
+Rails 2:
 
-or in your Gemfile:
+  gem 'gimme_a_break', :version => "~> 0.2.0"
 
-  gem 'gimme_a_break'
+Rails 3:
+
+  gem 'gimme_a_break', '>= 1.0.0'
 
 
 == Examples
